@@ -53,11 +53,11 @@ test: all
 	$(GORUN) build/ci.go test -timeout 1h
 
 truffle-test:
-	docker build . -f ./docker/Dockerfile --target bsc-genesis -t bsc-genesis
-	docker build . -f ./docker/Dockerfile --target bsc -t bsc
+	docker build . -f ./docker/Dockerfile --target axc-genesis -t axc-genesis
+	docker build . -f ./docker/Dockerfile --target axc -t axc
 	docker build . -f ./docker/Dockerfile.truffle -t truffle-test
 	docker-compose -f ./tests/truffle/docker-compose.yml up genesis
-	docker-compose -f ./tests/truffle/docker-compose.yml up -d bsc-rpc bsc-validator1
+	docker-compose -f ./tests/truffle/docker-compose.yml up -d axc-rpc axc-validator1
 	sleep 30
 	docker-compose -f ./tests/truffle/docker-compose.yml up --exit-code-from truffle-test truffle-test
 	docker-compose -f ./tests/truffle/docker-compose.yml down

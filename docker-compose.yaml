@@ -1,4 +1,4 @@
-version: '3.6'
+version: "3.6"
 services:
   init:
     image: alpine
@@ -12,7 +12,7 @@ services:
     volumes:
       - data:/data
 
-  bsc:
+  axc:
     build:
       context: .
       dockerfile: Dockerfile
@@ -37,18 +37,18 @@ services:
       timeout: 3s
     volumes:
       - data:/data
-      - config:/bsc/config
+      - config:/axc/config
 
 volumes:
   config:
     driver: local
     driver_opts:
-      type: 'none'
-      o: 'bind'
-      device: '/tmp/bsc/config/mainnet'
+      type: "none"
+      o: "bind"
+      device: "/tmp/axc/config/mainnet"
   data:
     driver: local
     driver_opts:
-      type: 'none'
-      o: 'bind'
-      device: '/tmp/bsc/data/mainnet'
+      type: "none"
+      o: "bind"
+      device: "/tmp/axc/data/mainnet"

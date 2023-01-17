@@ -2,7 +2,7 @@ version: "3"
 
 services:
   genesis:
-    image: bsc-genesis
+    image: axc-genesis
     env_file: .env
     environment:
       INIT_HOLDER_BALANCE: "500000000000000000000"
@@ -13,9 +13,9 @@ services:
       - ./config:/root/config
       - ./init-holders:/root/init-holders
     command: /root/scripts/bootstrap.sh
-  
-  bsc-rpc:
-    image: bsc
+
+  axc-rpc:
+    image: axc
     healthcheck:
       test: nc -z localhost 8545
       interval: 3s
@@ -23,35 +23,35 @@ services:
       retries: 15
     env_file: .env
     environment:
-      NODE_ID: bsc-rpc
+      NODE_ID: axc-rpc
     volumes:
-      - ./storage/bsc-rpc:/root/.ethereum
+      - ./storage/axc-rpc:/root/.ethereum
       - ./scripts:/scripts
       - ./config:/config
-    entrypoint: [ "sh", "-c", "/scripts/bsc-rpc.sh" ]
+    entrypoint: ["sh", "-c", "/scripts/axc-rpc.sh"]
 
-  bsc-validator1:
-    image: bsc
+  axc-validator1:
+    image: axc
     env_file: .env
     environment:
-      NODE_ID: bsc-validator1
-      BOOTSTRAP_HOST: bsc-rpc
+      NODE_ID: axc-validator1
+      BOOTSTRAP_HOST: axc-rpc
     volumes:
-      - ./storage/bsc-validator1:/root/.ethereum
+      - ./storage/axc-validator1:/root/.ethereum
       - ./scripts:/scripts
-    entrypoint: [ "sh", "-c", "/scripts/bsc-validator.sh" ]
-  
+    entrypoint: ["sh", "-c", "/scripts/axc-validator.sh"]
+
   truffle-test:
     image: truffle-test
     command: /scripts/truffle-test.sh
     env_file: .env
     environment:
-      RPC_HOST: bsc-rpc
+      RPC_HOST: axc-rpc
       RPC_PORT: 8545
     volumes:
       - ./scripts:/scripts
     depends_on:
-      bsc-rpc:
+      axc-rpc:
         condition: service_healthy
 
 networks:
