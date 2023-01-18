@@ -1,0 +1,1 @@
+Rule for branch name of project
