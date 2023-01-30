@@ -53,3 +53,5 @@ cmd/geth/__debug_bin
 
 testnet
 mainnet
+/config.toml
+/genesis.json
