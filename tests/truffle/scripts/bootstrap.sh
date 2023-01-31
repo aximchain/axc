@@ -3,7 +3,7 @@
 workspace=$(cd `dirname $0`; pwd)/..
 
 function prepare() {
-   if ! [[ -f /usr/local/bin/geth ]];then
+   if ! [[ -f /usr/bin/geth ]];then
         echo "geth do not exist!"
         exit 1
    fi
@@ -33,6 +33,8 @@ function generate_genesis() {
 function init_genesis_data() {
      node_type=$1
      node_id=$2
+     mkdir -p ${workspace}/storage/${node_id}
+     mkdir -p ${workspace}/storage/${node_id}/keystore
      geth --datadir ${workspace}/storage/${node_id} init ${workspace}/genesis/genesis.json
      cp ${workspace}/config/config-${node_type}.toml  ${workspace}/storage/${node_id}/config.toml
      sed -i -e "s/{{NetworkId}}/${AXC_CHAIN_ID}/g" ${workspace}/storage/${node_id}/config.toml
