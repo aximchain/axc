@@ -28,7 +28,7 @@ RUN apk add --no-cache make gcc musl-dev linux-headers git bash
 WORKDIR /axc
 ADD . .
 RUN make geth && \
-    mv /axc/build/bin/geth /usr/bin \
+    cp /axc/build/bin/geth /usr/bin \
     && chmod +x /usr/bin/geth
 
 FROM ethereum/solc:0.6.4-alpine as axc-genesis

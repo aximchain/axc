@@ -15,7 +15,7 @@ function prepare() {
 function init_validator() {
      node_id=$1
      mkdir -p ${workspace}/storage/${node_id}
-     geth --datadir ${workspace}/storage/${node_id} account new   --password /dev/null > ${workspace}/storage/${node_id}Info
+     geth --datadir ${workspace}/storage/${node_id} account new --password /dev/null > ${workspace}/storage/${node_id}Info
      validatorAddr=`cat ${workspace}/storage/${node_id}Info|grep 'Public address of the key'|awk '{print $6}'`
      echo "${validatorAddr},${validatorAddr},${validatorAddr},0x0000000010000000" >> ${workspace}/genesis/validators.conf
      echo ${validatorAddr} > ${workspace}/storage/${node_id}/address
@@ -33,12 +33,12 @@ function generate_genesis() {
 function init_genesis_data() {
      node_type=$1
      node_id=$2
-     mkdir -p ${workspace}/storage/${node_id}
-     mkdir -p ${workspace}/storage/${node_id}/keystore
      geth --datadir ${workspace}/storage/${node_id} init ${workspace}/genesis/genesis.json
      cp ${workspace}/config/config-${node_type}.toml  ${workspace}/storage/${node_id}/config.toml
      sed -i -e "s/{{NetworkId}}/${AXC_CHAIN_ID}/g" ${workspace}/storage/${node_id}/config.toml
      if [ "${node_id}" == "axc-rpc" ]; then
+					mkdir -p ${workspace}/storage/${node_id}
+					mkdir -p ${workspace}/storage/${node_id}/keystore
           cp ${workspace}/init-holders/* ${workspace}/storage/${node_id}/keystore
           cp ${workspace}/genesis/genesis.json ${workspace}/storage/${node_id}
      fi
