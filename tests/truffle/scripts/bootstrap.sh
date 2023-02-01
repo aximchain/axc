@@ -24,7 +24,22 @@ function init_validator() {
 function generate_genesis() {
      INIT_HOLDER_ADDRESSES=$(ls ${workspace}/init-holders | tr '\n' ',')
      INIT_HOLDER_ADDRESSES=${INIT_HOLDER_ADDRESSES/%,/}
-     sed  "s/{{INIT_HOLDER_ADDRESSES}}/${INIT_HOLDER_ADDRESSES}/g" ${workspace}/genesis/init_holders.template | sed  "s/{{INIT_HOLDER_BALANCE}}/${INIT_HOLDER_BALANCE}/g" > ${workspace}/genesis/init_holders.js
+     INIT_HOLDER_ADDRESSES=($(echo $INIT_HOLDER_ADDRESSES | tr ',' '\n'))
+     num=4
+     for address in "${INIT_HOLDER_ADDRESSES[@]}"
+     do
+        if [ $num -eq 4 ]
+        then
+            sed "${num} s/{{INIT_HOLDER_ADDRESSES}}/${address}/g" ${workspace}/genesis/init_holders.template | sed "s/{{INIT_HOLDER_BALANCE}}/${INIT_HOLDER_BALANCE}/g" > ${workspace}/genesis/init_holders${num}.js
+        else
+            privNum=$((num-4))
+            sed "${num} s/{{INIT_HOLDER_ADDRESSES}}/${address}/" ${workspace}/genesis/init_holders${privNum}.js | sed "s/{{INIT_HOLDER_BALANCE}}/${INIT_HOLDER_BALANCE}/g" > ${workspace}/genesis/init_holders${num}.js
+            rm {workspace}/genesis/init_holders${privNum}.js
+        fi
+        num=$((num+4))
+     done
+     privNum=$((num-4))
+     mv {workspace}/genesis/init_holders${privNum}.js {workspace}/genesis/init_holders.js
      node generate-validator.js
      chainIDHex=$(printf '%04x\n' ${AXC_CHAIN_ID})
      node generate-genesis.js --chainid ${AXC_CHAIN_ID} --axcChainId ${chainIDHex}
