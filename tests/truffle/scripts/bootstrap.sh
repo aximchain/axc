@@ -7,6 +7,8 @@ function prepare() {
         echo "geth do not exist!"
         exit 1
    fi
+   echo "PHUONGPHUONG"
+   echo ${workspace}
    rm -rf ${workspace}/storage/*
    cd ${workspace}/genesis
    rm -rf validators.conf
@@ -27,7 +29,7 @@ function generate_genesis() {
      sed  "s/{{INIT_HOLDER_ADDRESSES}}/${INIT_HOLDER_ADDRESSES}/g" ${workspace}/genesis/init_holders.template | sed  "s/{{INIT_HOLDER_BALANCE}}/${INIT_HOLDER_BALANCE}/g" > ${workspace}/genesis/init_holders.js
      node generate-validator.js
      chainIDHex=$(printf '%04x\n' ${AXC_CHAIN_ID})
-     node generate-genesis.js --chainid ${AXC_CHAIN_ID} --axcChainId ${chainIDHex}
+     node generate-genesis.js --chainid ${AXC_CHAIN_ID} --bscChainId ${chainIDHex}
 }
 
 function init_genesis_data() {
