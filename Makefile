@@ -12,6 +12,11 @@ GORUN = env GO111MODULE=on go run
 GIT_COMMIT=$(shell git rev-parse HEAD)
 GIT_COMMIT_DATE=$(shell git log -n1 --pretty='format:%cd' --date=format:'%Y%m%d')
 
+bootnode:
+	$(GORUN) build/ci.go install ./cmd/bootnode
+	@echo "Done building."
+	@echo "Run \"$(GOBIN)/bootnode\" to launch bootnode."
+
 geth:
 	$(GORUN) build/ci.go install ./cmd/geth
 	@echo "Done building."
