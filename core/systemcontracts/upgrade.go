@@ -483,7 +483,7 @@ func UpgradeBuildInSystemContract(config *params.ChainConfig, blockNumber *big.I
 	var network string
 	switch GenesisHash {
 	/* Add mainnet genesis hash */
-	case params.BSCGenesisHash:
+	case params.AXCGenesisHash:
 		network = mainNet
 	case params.ChapelGenesisHash:
 		network = chapelNet

@@ -229,7 +229,7 @@ func SetupGenesisBlockWithOverride(db ethdb.Database, genesis *Genesis, override
 	// if we just continued here.
 	// The full node of two AXC testnets may run without genesis file after been inited.
 	if genesis == nil && stored != params.MainnetGenesisHash &&
-		stored != params.ChapelGenesisHash && stored != params.RialtoGenesisHash && stored != params.BSCGenesisHash {
+		stored != params.ChapelGenesisHash && stored != params.RialtoGenesisHash && stored != params.AXCGenesisHash {
 		return storedcfg, stored, nil
 	}
 	// Check config compatibility and write the config. Compatibility errors
@@ -260,8 +260,8 @@ func (g *Genesis) configOrDefault(ghash common.Hash) *params.ChainConfig {
 		return params.RinkebyChainConfig
 	case ghash == params.GoerliGenesisHash:
 		return params.GoerliChainConfig
-	case ghash == params.BSCGenesisHash:
-		return params.BSCChainConfig
+	case ghash == params.AXCGenesisHash:
+		return params.AXCChainConfig
 	case ghash == params.ChapelGenesisHash:
 		return params.ChapelChainConfig
 	case ghash == params.RialtoGenesisHash:
