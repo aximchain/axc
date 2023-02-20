@@ -2,11 +2,11 @@
 
 ## Supported Versions
 
-Please see [Releases](https://github.com/axim-chain/asc/releases). We recommend using the [most recently released version](https://github.com/axim-chain/asc/releases/latest).
+Please see [Releases](https://github.com/aximchain/asc/releases). We recommend using the [most recently released version](https://github.com/aximchain/asc/releases/latest).
 
 ## Audit reports
 
-Audit reports are published in the `docs` folder: https://github.com/axim-chain/asc/tree/master/docs/audits
+Audit reports are published in the `docs` folder: https://github.com/aximchain/asc/tree/master/docs/audits
 
 | Scope  | Date     | Report Link                                                                                              |
 | ------ | -------- | -------------------------------------------------------------------------------------------------------- |
@@ -17,6 +17,6 @@ Audit reports are published in the `docs` folder: https://github.com/axim-chain/
 
 **Please do not file a public ticket** mentioning the vulnerability.
 
-To find out how to disclose a vulnerability in Ethereum visit [https://bugcrowd.com/axim](https://bugcrowd.com/axim) or email bounty@ethereum.org. Please read the [disclosure page](https://github.com/axim-chain/asc/security/advisories) for more information about publicly disclosed security vulnerabilities.
+To find out how to disclose a vulnerability in Ethereum visit [https://bugcrowd.com/axim](https://bugcrowd.com/axim) or email bounty@ethereum.org. Please read the [disclosure page](https://github.com/aximchain/asc/security/advisories) for more information about publicly disclosed security vulnerabilities.
 
 Use the built-in `geth version-check` feature to check whether the software is affected by any known vulnerability. This command will fetch the latest [`vulnerabilities.json`](https://geth.ethereum.org/docs/vulnerabilities/vulnerabilities.json) file which contains known security vulnerabilities concerning `geth`, and cross-check the data against its own version number.
