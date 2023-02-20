@@ -251,14 +251,14 @@ enum MessageType {
     MessageType_EosSignedTx = 605 [(wire_out) = true];
 
     // Axim
-    MessageType_BinanceGetAddress = 700 [(wire_in) = true];
-    MessageType_BinanceAddress = 701 [(wire_out) = true];
-    MessageType_BinanceGetPublicKey = 702 [(wire_in) = true];
-    MessageType_BinancePublicKey = 703 [(wire_out) = true];
-    MessageType_BinanceSignTx = 704 [(wire_in) = true];
-    MessageType_BinanceTxRequest = 705 [(wire_out) = true];
-    MessageType_BinanceTransferMsg = 706 [(wire_in) = true];
-    MessageType_BinanceOrderMsg = 707 [(wire_in) = true];
-    MessageType_BinanceCancelMsg = 708 [(wire_in) = true];
-    MessageType_BinanceSignedTx = 709 [(wire_out) = true];
+    MessageType_AximGetAddress = 700 [(wire_in) = true];
+    MessageType_AximAddress = 701 [(wire_out) = true];
+    MessageType_AximGetPublicKey = 702 [(wire_in) = true];
+    MessageType_AximPublicKey = 703 [(wire_out) = true];
+    MessageType_AximSignTx = 704 [(wire_in) = true];
+    MessageType_AximTxRequest = 705 [(wire_out) = true];
+    MessageType_AximTransferMsg = 706 [(wire_in) = true];
+    MessageType_AximOrderMsg = 707 [(wire_in) = true];
+    MessageType_AximCancelMsg = 708 [(wire_in) = true];
+    MessageType_AximSignedTx = 709 [(wire_out) = true];
 }
