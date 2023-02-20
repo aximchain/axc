@@ -228,7 +228,7 @@ const (
 	MessageType_MessageType_EosTxActionRequest MessageType = 603
 	MessageType_MessageType_EosTxActionAck     MessageType = 604
 	MessageType_MessageType_EosSignedTx        MessageType = 605
-	// Binance
+	// Axim
 	MessageType_MessageType_BinanceGetAddress   MessageType = 700
 	MessageType_MessageType_BinanceAddress      MessageType = 701
 	MessageType_MessageType_BinanceGetPublicKey MessageType = 702

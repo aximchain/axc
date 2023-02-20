@@ -250,7 +250,7 @@ enum MessageType {
     MessageType_EosTxActionAck = 604 [(wire_in) = true];
     MessageType_EosSignedTx = 605 [(wire_out) = true];
 
-    // Binance
+    // Axim
     MessageType_BinanceGetAddress = 700 [(wire_in) = true];
     MessageType_BinanceAddress = 701 [(wire_out) = true];
     MessageType_BinanceGetPublicKey = 702 [(wire_in) = true];
