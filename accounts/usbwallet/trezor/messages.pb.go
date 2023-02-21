@@ -228,17 +228,17 @@ const (
 	MessageType_MessageType_EosTxActionRequest MessageType = 603
 	MessageType_MessageType_EosTxActionAck     MessageType = 604
 	MessageType_MessageType_EosSignedTx        MessageType = 605
-	// Binance
-	MessageType_MessageType_BinanceGetAddress   MessageType = 700
-	MessageType_MessageType_BinanceAddress      MessageType = 701
-	MessageType_MessageType_BinanceGetPublicKey MessageType = 702
-	MessageType_MessageType_BinancePublicKey    MessageType = 703
-	MessageType_MessageType_BinanceSignTx       MessageType = 704
-	MessageType_MessageType_BinanceTxRequest    MessageType = 705
-	MessageType_MessageType_BinanceTransferMsg  MessageType = 706
-	MessageType_MessageType_BinanceOrderMsg     MessageType = 707
-	MessageType_MessageType_BinanceCancelMsg    MessageType = 708
-	MessageType_MessageType_BinanceSignedTx     MessageType = 709
+	// Axim
+	MessageType_MessageType_AximGetAddress   MessageType = 700
+	MessageType_MessageType_AximAddress      MessageType = 701
+	MessageType_MessageType_AximGetPublicKey MessageType = 702
+	MessageType_MessageType_AximPublicKey    MessageType = 703
+	MessageType_MessageType_AximSignTx       MessageType = 704
+	MessageType_MessageType_AximTxRequest    MessageType = 705
+	MessageType_MessageType_AximTransferMsg  MessageType = 706
+	MessageType_MessageType_AximOrderMsg     MessageType = 707
+	MessageType_MessageType_AximCancelMsg    MessageType = 708
+	MessageType_MessageType_AximSignedTx     MessageType = 709
 )
 
 var MessageType_name = map[int32]string{
@@ -425,16 +425,16 @@ var MessageType_name = map[int32]string{
 	603: "MessageType_EosTxActionRequest",
 	604: "MessageType_EosTxActionAck",
 	605: "MessageType_EosSignedTx",
-	700: "MessageType_BinanceGetAddress",
-	701: "MessageType_BinanceAddress",
-	702: "MessageType_BinanceGetPublicKey",
-	703: "MessageType_BinancePublicKey",
-	704: "MessageType_BinanceSignTx",
-	705: "MessageType_BinanceTxRequest",
-	706: "MessageType_BinanceTransferMsg",
-	707: "MessageType_BinanceOrderMsg",
-	708: "MessageType_BinanceCancelMsg",
-	709: "MessageType_BinanceSignedTx",
+	700: "MessageType_AximGetAddress",
+	701: "MessageType_AximAddress",
+	702: "MessageType_AximGetPublicKey",
+	703: "MessageType_AximPublicKey",
+	704: "MessageType_AximSignTx",
+	705: "MessageType_AximTxRequest",
+	706: "MessageType_AximTransferMsg",
+	707: "MessageType_AximOrderMsg",
+	708: "MessageType_AximCancelMsg",
+	709: "MessageType_AximSignedTx",
 }
 
 var MessageType_value = map[string]int32{
@@ -621,16 +621,16 @@ var MessageType_value = map[string]int32{
 	"MessageType_EosTxActionRequest":                        603,
 	"MessageType_EosTxActionAck":                            604,
 	"MessageType_EosSignedTx":                               605,
-	"MessageType_BinanceGetAddress":                         700,
-	"MessageType_BinanceAddress":                            701,
-	"MessageType_BinanceGetPublicKey":                       702,
-	"MessageType_BinancePublicKey":                          703,
-	"MessageType_BinanceSignTx":                             704,
-	"MessageType_BinanceTxRequest":                          705,
-	"MessageType_BinanceTransferMsg":                        706,
-	"MessageType_BinanceOrderMsg":                           707,
-	"MessageType_BinanceCancelMsg":                          708,
-	"MessageType_BinanceSignedTx":                           709,
+	"MessageType_AximGetAddress":                         700,
+	"MessageType_AximAddress":                            701,
+	"MessageType_AximGetPublicKey":                       702,
+	"MessageType_AximPublicKey":                          703,
+	"MessageType_AximSignTx":                             704,
+	"MessageType_AximTxRequest":                          705,
+	"MessageType_AximTransferMsg":                        706,
+	"MessageType_AximOrderMsg":                           707,
+	"MessageType_AximCancelMsg":                          708,
+	"MessageType_AximSignedTx":                           709,
 }
 
 func (x MessageType) Enum() *MessageType {

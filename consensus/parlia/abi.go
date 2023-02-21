@@ -798,7 +798,7 @@ const validatorSetABI = `
     },
     {
       "inputs": [],
-      "name": "bscChainID",
+      "name": "ascChainID",
       "outputs": [
         {
           "internalType": "uint16",

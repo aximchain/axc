@@ -50,3 +50,15 @@ profile.cov
 **/yarn-error.log
 cmd/geth/node/
 cmd/geth/__debug_bin
+
+
+/testnet 
+/mainnet
+
+config.toml
+genesis.json
+boot.key
+
+/asc
+/asc-dev
+
